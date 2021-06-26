@@ -1,12 +1,16 @@
 import { Controller, Get } from '@nestjs/common';
 import { AppService } from './app.service';
+import { Observable } from "rxjs";
+import { fromPromise } from "rxjs/internal-compatibility";
+import { NewmanRunSummary } from "newman";
 
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService) {}
+  constructor(private readonly appService: AppService) {
+  }
 
   @Get()
-  getHello(): string {
-    return this.appService.getHello();
+  getResults(): Observable<NewmanRunSummary> {
+    return fromPromise(this.appService.getResults());
   }
 }
