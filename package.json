@@ -1,10 +1,10 @@
 {
   "name": "postman-executor",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "",
-  "author": "",
+  "author": "gbloch",
   "private": true,
-  "license": "UNLICENSED",
+  "license": "MIT",
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "nest build",
@@ -24,6 +24,7 @@
     "@nestjs/common": "^7.6.15",
     "@nestjs/core": "^7.6.15",
     "@nestjs/platform-express": "^7.6.15",
+    "newman": "^5.2.4",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^6.6.6"
