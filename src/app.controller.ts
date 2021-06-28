@@ -12,7 +12,7 @@ export class AppController {
 
   @Get()
   getResults(): Observable<NewmanRunSummary> {
-    return fromPromise(this.appService.getResults());
+    return fromPromise(this.appService.getResults('../res/sig-v2.json'));
   }
 
   @Post('upload-collections')
@@ -20,7 +20,10 @@ export class AppController {
     { name: 'collections', maxCount: 100 },
     { name: 'environment', maxCount: 1 }
   ]))
-  uploadCollections(@UploadedFiles() files: Array<Express.Multer.File>) {
-    console.log(files)
+  uploadCollections(@UploadedFiles() files) {
+    return fromPromise(this.appService.getResultsFromBlob(
+      files.collections[0].buffer.toString(),
+      files.environment[0].buffer.toString(),
+    ))
   }
 }
