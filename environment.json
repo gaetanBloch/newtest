@@ -1,0 +1,704 @@
+{
+	"info": {
+		"_postman_id": "ee46c4bf-bd6b-4587-a491-1e0fa4c09d10",
+		"name": "1 TA PR071-SIG Itineraire V1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "TA Recherche incorrecte",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "pe-id-environnement",
+						"value": "pe-id-environnement",
+						"type": "text"
+					},
+					{
+						"key": "pe-id-correlation",
+						"value": "pe-id-correlation",
+						"type": "text"
+					},
+					{
+						"key": "pe-id-utilisateur",
+						"value": "pe-id-utilisateur",
+						"type": "text"
+					},
+					{
+						"key": "pe-nom-application",
+						"value": "pe-nom-application",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/itineraire/v1/search?origin=&destination=7.658766,48.426172",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"itineraire",
+						"v1",
+						"search"
+					],
+					"query": [
+						{
+							"key": "origin",
+							"value": ""
+						},
+						{
+							"key": "destination",
+							"value": "7.658766,48.426172"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TA Recherche nulle",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "pe-id-environnement",
+						"value": "pe-id-environnement",
+						"type": "text"
+					},
+					{
+						"key": "pe-id-correlation",
+						"value": "pe-id-correlation",
+						"type": "text"
+					},
+					{
+						"key": "pe-id-utilisateur",
+						"value": "pe-id-utilisateur",
+						"type": "text"
+					},
+					{
+						"key": "pe-nom-application",
+						"value": "pe-nom-application",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/itineraire/v1/search?origin=0.000000,0.00000&destination=7.65522,48.420209",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"itineraire",
+						"v1",
+						"search"
+					],
+					"query": [
+						{
+							"key": "origin",
+							"value": "0.000000,0.00000"
+						},
+						{
+							"key": "destination",
+							"value": "7.65522,48.420209"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TA Recherche inexistante",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "pe-id-environnement",
+						"value": "pe-id-environnement",
+						"type": "text"
+					},
+					{
+						"key": "pe-id-correlation",
+						"value": "pe-id-correlation",
+						"type": "text"
+					},
+					{
+						"key": "pe-id-utilisateur",
+						"value": "pe-id-utilisateur",
+						"type": "text"
+					},
+					{
+						"key": "pe-nom-application",
+						"value": "pe-nom-application",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/itineraire/v1/search?origin=A.672471,48.426715&destination=B.65522,48.420209",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"itineraire",
+						"v1",
+						"search"
+					],
+					"query": [
+						{
+							"key": "origin",
+							"value": "A.672471,48.426715"
+						},
+						{
+							"key": "destination",
+							"value": "B.65522,48.420209"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TA Recherche iso",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "pe-id-environnement",
+						"value": "pe-id-environnement",
+						"type": "text"
+					},
+					{
+						"key": "pe-id-correlation",
+						"value": "pe-id-correlation",
+						"type": "text"
+					},
+					{
+						"key": "pe-id-utilisateur",
+						"value": "pe-id-utilisateur",
+						"type": "text"
+					},
+					{
+						"key": "pe-nom-application",
+						"value": "pe-nom-application",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/itineraire/v1/search?origin=7.672471,48.426715&destination=7.672471,48.426715",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"itineraire",
+						"v1",
+						"search"
+					],
+					"query": [
+						{
+							"key": "origin",
+							"value": "7.672471,48.426715"
+						},
+						{
+							"key": "destination",
+							"value": "7.672471,48.426715"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TA Recherche simple",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "pe-id-environnement",
+						"value": "pe-id-environnement",
+						"type": "text"
+					},
+					{
+						"key": "pe-id-correlation",
+						"value": "pe-id-correlation",
+						"type": "text"
+					},
+					{
+						"key": "pe-id-utilisateur",
+						"value": "pe-id-utilisateur",
+						"type": "text"
+					},
+					{
+						"key": "pe-nom-application",
+						"value": "pe-nom-application",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/itineraire/v1/search/?origin=7.672471,48.426715&destination=7.663325,48.4235",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"itineraire",
+						"v1",
+						"search",
+						""
+					],
+					"query": [
+						{
+							"key": "origin",
+							"value": "7.672471,48.426715"
+						},
+						{
+							"key": "destination",
+							"value": "7.663325,48.4235"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TA Recherche avec étape",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "pe-id-environnement",
+						"value": "pe-id-environnement",
+						"type": "text"
+					},
+					{
+						"key": "pe-id-correlation",
+						"value": "pe-id-correlation",
+						"type": "text"
+					},
+					{
+						"key": "pe-id-utilisateur",
+						"value": "pe-id-utilisateur",
+						"type": "text"
+					},
+					{
+						"key": "pe-nom-application",
+						"value": "pe-nom-application",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/itineraire/v1/search/?origin=7.672471,48.426715&destination=7.663325,48.4235&waypoints=7.658766,48.426172",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"itineraire",
+						"v1",
+						"search",
+						""
+					],
+					"query": [
+						{
+							"key": "origin",
+							"value": "7.672471,48.426715"
+						},
+						{
+							"key": "destination",
+							"value": "7.663325,48.4235"
+						},
+						{
+							"key": "waypoints",
+							"value": "7.658766,48.426172"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TA Recherche avec étape + Rapide",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "pe-id-environnement",
+						"value": "pe-id-environnement",
+						"type": "text"
+					},
+					{
+						"key": "pe-id-correlation",
+						"value": "pe-id-correlation",
+						"type": "text"
+					},
+					{
+						"key": "pe-id-utilisateur",
+						"value": "pe-id-utilisateur",
+						"type": "text"
+					},
+					{
+						"key": "pe-nom-application",
+						"value": "pe-nom-application",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/itineraire/v1/search/?origin=7.672471,48.426715&destination=7.663325,48.4235&waypoints=7.658766,48.426172&method=time",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"itineraire",
+						"v1",
+						"search",
+						""
+					],
+					"query": [
+						{
+							"key": "origin",
+							"value": "7.672471,48.426715"
+						},
+						{
+							"key": "destination",
+							"value": "7.663325,48.4235"
+						},
+						{
+							"key": "waypoints",
+							"value": "7.658766,48.426172"
+						},
+						{
+							"key": "method",
+							"value": "time"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TA Recherche avec étape + Court",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "pe-id-environnement",
+						"value": "pe-id-environnement",
+						"type": "text"
+					},
+					{
+						"key": "pe-id-correlation",
+						"value": "pe-id-correlation",
+						"type": "text"
+					},
+					{
+						"key": "pe-id-utilisateur",
+						"value": "pe-id-utilisateur",
+						"type": "text"
+					},
+					{
+						"key": "pe-nom-application",
+						"value": "pe-nom-application",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/itineraire/v1/search/?origin=7.672471,48.426715&destination=7.663325,48.4235&waypoints=7.658766,48.426172&method=distance",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"itineraire",
+						"v1",
+						"search",
+						""
+					],
+					"query": [
+						{
+							"key": "origin",
+							"value": "7.672471,48.426715"
+						},
+						{
+							"key": "destination",
+							"value": "7.663325,48.4235"
+						},
+						{
+							"key": "waypoints",
+							"value": "7.658766,48.426172"
+						},
+						{
+							"key": "method",
+							"value": "distance"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TA Recherche long trajet",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "pe-id-environnement",
+						"value": "pe-id-environnement",
+						"type": "text"
+					},
+					{
+						"key": "pe-id-correlation",
+						"value": "pe-id-correlation",
+						"type": "text"
+					},
+					{
+						"key": "pe-id-utilisateur",
+						"value": "pe-id-utilisateur",
+						"type": "text"
+					},
+					{
+						"key": "pe-nom-application",
+						"value": "pe-nom-application",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/itineraire/v1/search/?origin=7.672471,48.426715&destination=2.330114,48.867819",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"itineraire",
+						"v1",
+						"search",
+						""
+					],
+					"query": [
+						{
+							"key": "origin",
+							"value": "7.672471,48.426715"
+						},
+						{
+							"key": "destination",
+							"value": "2.330114,48.867819"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TA Recherche avec exclusion péage",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "pe-id-environnement",
+						"value": "pe-id-environnement",
+						"type": "text"
+					},
+					{
+						"key": "pe-id-correlation",
+						"value": "pe-id-correlation",
+						"type": "text"
+					},
+					{
+						"key": "pe-id-utilisateur",
+						"value": "pe-id-utilisateur",
+						"type": "text"
+					},
+					{
+						"key": "pe-nom-application",
+						"value": "pe-nom-application",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/itineraire/v1/search/?origin=7.672471,48.426715&destination=2.330114,48.867819&exclusions=Toll",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"itineraire",
+						"v1",
+						"search",
+						""
+					],
+					"query": [
+						{
+							"key": "origin",
+							"value": "7.672471,48.426715"
+						},
+						{
+							"key": "destination",
+							"value": "2.330114,48.867819"
+						},
+						{
+							"key": "exclusions",
+							"value": "Toll"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TA Recherche avec exclusion tunnel",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "pe-id-environnement",
+						"value": "pe-id-environnement",
+						"type": "text"
+					},
+					{
+						"key": "pe-id-correlation",
+						"value": "pe-id-correlation",
+						"type": "text"
+					},
+					{
+						"key": "pe-id-utilisateur",
+						"value": "pe-id-utilisateur",
+						"type": "text"
+					},
+					{
+						"key": "pe-nom-application",
+						"value": "pe-nom-application",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/itineraire/v1/search/?origin=7.672471,48.426715&destination=2.330114,48.867819&exclusions=Tunnel",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"itineraire",
+						"v1",
+						"search",
+						""
+					],
+					"query": [
+						{
+							"key": "origin",
+							"value": "7.672471,48.426715"
+						},
+						{
+							"key": "destination",
+							"value": "2.330114,48.867819"
+						},
+						{
+							"key": "exclusions",
+							"value": "Tunnel"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TA Recherche petit Trajet",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "pe-id-environnement",
+						"value": "pe-id-environnement",
+						"type": "text"
+					},
+					{
+						"key": "pe-id-correlation",
+						"value": "pe-id-correlation",
+						"type": "text"
+					},
+					{
+						"key": "pe-id-utilisateur",
+						"value": "pe-id-utilisateur",
+						"type": "text"
+					},
+					{
+						"key": "pe-nom-application",
+						"value": "pe-nom-application",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/itineraire/v1/search/?origin=7.672471,48.426715&destination=7.663325,48.4235&graphName=voiture",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"itineraire",
+						"v1",
+						"search",
+						""
+					],
+					"query": [
+						{
+							"key": "origin",
+							"value": "7.672471,48.426715"
+						},
+						{
+							"key": "destination",
+							"value": "7.663325,48.4235"
+						},
+						{
+							"key": "graphName",
+							"value": "voiture"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TA Recherche avec pieton Copy",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "pe-id-environnement",
+						"value": "pe-id-environnement",
+						"type": "text"
+					},
+					{
+						"key": "pe-id-correlation",
+						"value": "pe-id-correlation",
+						"type": "text"
+					},
+					{
+						"key": "pe-id-utilisateur",
+						"value": "pe-id-utilisateur",
+						"type": "text"
+					},
+					{
+						"key": "pe-nom-application",
+						"value": "pe-nom-application",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/itineraire/v1/search/?origin=7.672471,48.426715&destination=7.663325,48.4235&graphName=pieton",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"itineraire",
+						"v1",
+						"search",
+						""
+					],
+					"query": [
+						{
+							"key": "origin",
+							"value": "7.672471,48.426715"
+						},
+						{
+							"key": "destination",
+							"value": "7.663325,48.4235"
+						},
+						{
+							"key": "graphName",
+							"value": "pieton"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
