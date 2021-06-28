@@ -1,8 +1,9 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Post, UploadedFiles, UseInterceptors } from '@nestjs/common';
 import { AppService } from './app.service';
 import { Observable } from "rxjs";
 import { fromPromise } from "rxjs/internal-compatibility";
 import { NewmanRunSummary } from "newman";
+import { FileFieldsInterceptor } from "@nestjs/platform-express";
 
 @Controller()
 export class AppController {
@@ -12,5 +13,14 @@ export class AppController {
   @Get()
   getResults(): Observable<NewmanRunSummary> {
     return fromPromise(this.appService.getResults());
+  }
+
+  @Post('upload-collections')
+  @UseInterceptors(FileFieldsInterceptor([
+    { name: 'collections', maxCount: 100 },
+    { name: 'environment', maxCount: 1 }
+  ]))
+  uploadCollections(@UploadedFiles() files: Array<Express.Multer.File>) {
+    console.log(files)
   }
 }

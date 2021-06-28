@@ -13,7 +13,7 @@ export class AppService {
           collection: require('../res/sig-v2.json'),
           reporters: 'cli',
         }, (err, summary) => {
-          if (err) reject('error: ' + err.message ?? 'Unknow error');
+          if (err) reject('error: ' + err.message ?? 'Unknown error');
           resolve(summary);
         }
       );
