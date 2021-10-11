@@ -9,7 +9,7 @@ env:
   AWS_REGION: eu-west-3
   ECR_REPOSITORY: gbloch-repo
   ECS_SERVICE: newtest-service
-  ECS_CLUSTER: default
+  ECS_CLUSTER: gbloch-cluster
   ECS_TASK_DEFINITION: .aws/task-def.json
   CONTAINER_NAME: newtest
 
