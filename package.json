@@ -1,7 +1,7 @@
 {
-  "name": "postman-executor",
+  "name": "newtest",
   "version": "0.1.0",
-  "description": "",
+  "description": "Postman collections tester using Newman",
   "author": "gbloch",
   "private": true,
   "license": "MIT",
