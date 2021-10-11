@@ -6,7 +6,7 @@ on:
     branches:
       - main
 env:
-  AWS_REGION: ew-west-3
+  AWS_REGION: eu-west-3
   ECR_REPOSITORY: gbloch-repo
   ECS_SERVICE: newtest-service
   ECS_CLUSTER: default
