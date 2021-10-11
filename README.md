@@ -6,6 +6,8 @@ REST API services to test Postman collections files / strings with Newman API an
 
 ## Swagger Documentation
 
+Available at ```https://{{host}}/api/doc```
+
 ![Doc full](https://i.imgur.com/MfiN2yb.png)
 <br>
 ![Doc files](https://i.imgur.com/YXk2ryU.png)
