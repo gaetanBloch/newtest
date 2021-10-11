@@ -25,12 +25,13 @@
     "@nestjs/core": "^7.6.15",
     "@nestjs/platform-express": "^7.6.15",
     "@nestjs/serve-static": "^2.2.2",
-    "@nestjs/swagger": "^4.8.1",
+    "@nestjs/swagger": "^4.8.2",
     "newman": "^5.2.4",
     "newman-reporter-htmlextra": "^1.21.0",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
-    "rxjs": "^6.6.6"
+    "rxjs": "^6.6.6",
+    "swagger-ui-express": "^4.1.6"
   },
   "devDependencies": {
     "@nestjs/cli": "^7.6.0",

@@ -1,7 +1,6 @@
 import {
   Body,
   Controller,
-  Get,
   Header,
   Post,
   Query,
@@ -15,7 +14,15 @@ import { FileFieldsInterceptor } from '@nestjs/platform-express';
 import ExecutorRequest from './types/ExecutorRequest';
 import ExecutorResponse from './types/ExecutorResponse';
 import { ApiImplicitQuery } from '@nestjs/swagger/dist/decorators/api-implicit-query.decorator';
+import {
+  ApiExtraModels,
+  ApiOkResponse,
+  ApiOperation,
+  getSchemaPath,
+} from '@nestjs/swagger';
+import { ApiImplicitFile } from '@nestjs/swagger/dist/decorators/api-implicit-file.decorator';
 
+@ApiExtraModels(ExecutorResponse)
 @Controller('/api/v1')
 export class AppController {
   constructor(private readonly appService: AppService) {}
@@ -28,10 +35,29 @@ export class AppController {
       { name: 'environment', maxCount: 1 },
     ]),
   )
+  @ApiOperation({
+    tags: ['test'],
+    description: 'Test collection files upload',
+  })
+  @ApiImplicitFile({
+    name: 'collection',
+    description: 'Test collection file',
+    required: true,
+  })
+  @ApiImplicitFile({
+    name: 'environment',
+    description: 'Test environment variables file',
+    required: true,
+  })
   @ApiImplicitQuery({
     name: 'details',
     required: false,
-    type: Boolean
+    type: Boolean,
+  })
+  @ApiOkResponse({
+    schema: {
+      oneOf: [{ $ref: getSchemaPath(ExecutorResponse) }],
+    },
   })
   uploadCollectionFile(
     @UploadedFiles() files,
@@ -49,10 +75,19 @@ export class AppController {
 
   @Header('content-type', 'application/json')
   @Post('test/strings')
+  @ApiOperation({
+    tags: ['test'],
+    description: 'Test collection strings',
+  })
   @ApiImplicitQuery({
     name: 'details',
     required: false,
-    type: Boolean
+    type: Boolean,
+  })
+  @ApiOkResponse({
+    schema: {
+      oneOf: [{ $ref: getSchemaPath(ExecutorResponse) }],
+    },
   })
   uploadCollectionString(
     @Body() request: ExecutorRequest,
@@ -70,10 +105,29 @@ export class AppController {
 
   @Header('content-type', 'application/json')
   @Post('test/paths')
+  @ApiOperation({
+    tags: ['test'],
+    description: 'Test collection file paths',
+  })
+  @ApiImplicitQuery({
+    name: 'collection',
+    required: true,
+    type: String,
+  })
+  @ApiImplicitQuery({
+    name: 'environment',
+    required: true,
+    type: String,
+  })
   @ApiImplicitQuery({
     name: 'details',
     required: false,
-    type: Boolean
+    type: Boolean,
+  })
+  @ApiOkResponse({
+    schema: {
+      oneOf: [{ $ref: getSchemaPath(ExecutorResponse) }],
+    },
   })
   uploadCollectionPath(
     @Query() collection: string,
@@ -82,17 +136,16 @@ export class AppController {
   ): Observable<ExecutorResponse> {
     details = !this.isEmpty(details);
     return fromPromise(
-      this.appService.getResultsFromBlob(
-        collection,
-        environment,
-        details,
-      ),
+      this.appService.getResultsFromBlob(collection, environment, details),
     );
   }
 
+  // eslint-disable-next-line @typescript-eslint/ban-types
   private isEmpty = (obj: Object) => {
-    return obj
-    && Object.keys(obj).length === 0
-    && Object.getPrototypeOf(obj) === Object.prototype
-  }
+    return (
+      obj &&
+      Object.keys(obj).length === 0 &&
+      Object.getPrototypeOf(obj) === Object.prototype
+    );
+  };
 }

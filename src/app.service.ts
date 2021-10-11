@@ -39,8 +39,8 @@ export class AppService {
             response = {
               ...response,
               report,
-              fullResponse: summary
-            }
+              fullResponse: summary,
+            };
           }
           resolve(response);
         },
