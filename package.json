@@ -22,8 +22,8 @@
   },
   "dependencies": {
     "@nestjs/common": "^7.6.15",
-    "@nestjs/core": "^7.6.15",
-    "@nestjs/platform-express": "^7.6.15",
+    "@nestjs/core": "^9.2.1",
+    "@nestjs/platform-express": "^9.2.1",
     "@nestjs/serve-static": "^2.2.2",
     "@nestjs/swagger": "^4.8.2",
     "newman": "^5.2.4",
@@ -36,7 +36,7 @@
   "devDependencies": {
     "@nestjs/cli": "^7.6.0",
     "@nestjs/schematics": "^7.3.0",
-    "@nestjs/testing": "^7.6.15",
+    "@nestjs/testing": "^9.2.1",
     "@types/express": "^4.17.11",
     "@types/jest": "^26.0.22",
     "@types/multer": "^1.4.6",
